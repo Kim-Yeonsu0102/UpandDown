@@ -28,10 +28,11 @@ resetBtn.addEventListener("click", reset);
 // 5번의 기회를 다 쓰면 게임 끝 (더 이상 추측 불가, 버튼이 disable)
 
 function play() {
+
+    count.textContent = `남은 기회 : ${chances}`;
   let userValue = userInput.value;
 
-  chances--;
-  count.textContent = `남은 기회 : ${chances}`;
+  chances--; 
 
   if (chances < 1) {
     gameOver = true;
@@ -42,9 +43,7 @@ function play() {
     playButton.disabled = true;
   }
 
-  if (userValue > 100 || userValue <= 0) {
-    resultArea.textContent = "1과 100사이의 숫자를 입력해 주세요 ";
-  } else if (userValue < setNum) {
+  if(userValue < setNum) {
     resultArea.textContent = "아쉽네요!! UP !! ";
   } else if (userValue > setNum) {
     resultArea.textContent = "아쉽네요!! Down !! ";
@@ -53,6 +52,16 @@ function play() {
     count.textContent = "Congratulations";
     playButton.disabled = true;
   }
+
+  if(userValue > 100 || userValue <= 0) {
+    resultArea.textContent = "1과 100사이의 숫자를 입력해 주세요 ";
+    chances++;
+  } 
+
+
+
+
+
 }
 
 //Reset 버튼 누르면 게임이 리셋
