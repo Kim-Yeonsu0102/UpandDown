@@ -54,18 +54,18 @@ function play() {
     resultArea.textContent = " 게임 오버 ㅠㅠ";
     count.textContent = "Game Over";
   }
-
-  if (gameOver == true) {
-    playButton.disabled = true;
-  }
 }
 
 //Reset 버튼 누르면 게임이 리셋
 function reset() {
+  playButton.disabled = false;
+
+  chances = 8;
   //userIput창 정리
   userInput.value = "";
   //새로운 번호 생성
   pickNum();
+
   //결과창 문구 리셋
   resultArea.textContent = "게임 결과";
   count.textContent = `남은 기회 : ${chances}`;
