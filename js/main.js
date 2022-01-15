@@ -52,7 +52,7 @@ function play() {
   if (chances < 1) {
     gameOver = true;
     resultArea.textContent = " 게임 오버 ㅠㅠ";
-    count.textContent = "Game Over";
+    count.textContent = `정답은 ${setNum} 였습니다.`;
   }
 }
 
