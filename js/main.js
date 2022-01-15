@@ -7,7 +7,7 @@ let playButton = document.getElementById("playButton");
 let userInput = document.getElementById("userInput");
 let resultArea = document.getElementById("result");
 let resetBtn = document.getElementById("resetBtn");
-let chances = 5;
+let chances = 8;
 let gameOver = false;
 let count = document.getElementById("count");
 
@@ -68,5 +68,5 @@ function reset() {
   pickNum();
   //결과창 문구 리셋
   resultArea.textContent = "게임 결과";
-  count.textContent = "남은 기회 : 5";
+  count.textContent = `남은 기회 : ${chances}`;
 }
