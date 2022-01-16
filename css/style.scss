@@ -1,0 +1,163 @@
+// 웹폰트 
+@font-face {
+    font-family: 'Vitro_core';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// 컬러 변수
+$title-color: #f44336;
+$basic-color: #333;
+$goBtn-bg:$title-color;
+$resetBtn-bg:#76b9d8;
+$white:#fff;
+
+// 반응형 화면크기
+$mobile: 767px; 
+$tablet: 1023px; 
+$desktop: 1024px; 
+
+/*반응형, 브라우저 크기가 767px 이하일때*/ 
+@mixin mobile{ 
+    @media (max-width: $mobile)
+    { @content; } 
+} 
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/ 
+@mixin tablet{ 
+    @media (min-width: $mobile+1) and (max-width: $tablet)
+    { @content; } 
+} 
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/ 
+@mixin desktop{ 
+    @media (min-width: $desktop){ @content; } 
+} 
+
+/*넓이, 높이 자동 계산함수*/ 
+@mixin square($size){ 
+    $calculated: 32px * $size; 
+    width: $calculated; 
+    height: $calculated; 
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+section {
+    
+    margin: 0px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    text-align: center;
+
+
+}
+
+
+
+.title {
+    width: 80%;
+    margin: 20px auto;
+    width: 40vw;
+    height: 40vw;
+    background: url(/img/upDown.png);
+    background-size: contain;
+    background-repeat:no-repeat;
+    
+    h1 {
+        font-family: 'Vitro_core';
+        font-size: 4em;
+        color: $title-color;
+        word-break: keep-all;
+        -webkit-text-stroke: 3px $basic-color;
+
+    }
+
+}
+
+
+.buttonArea {
+    width:80%;
+    p {
+        font-family: 'Pretendard-Regular';
+    }
+
+    #result{        
+        font-size:2em;
+    }
+
+    #count{
+        font-size:1.2em;
+        color:$title-color;
+    }
+    #userInput{
+        margin:10px 0 ; 
+        padding:10px 0 ; 
+        width:50%; 
+    }
+
+    div.button{
+        margin:10px 0 ;
+        width:100%; 
+        button{
+            font-family: 'Vitro_core';
+            width:20%;
+            height:40px;
+            border:none;            
+            border-radius: 4px;;
+            letter-spacing: 2px;
+            font-size: 0.6em;
+        }
+
+        #playButton{
+            background:$goBtn-bg;
+            color:$white;
+        }
+
+        #resetBtn{
+            background: $resetBtn-bg;
+            color:$basic-color;
+        }
+
+    }
+
+}
+
+// @media (min-width: 300px) and (max-width: 1200px) { 
+
+//     .title {
+       
+//         margin: 10px auto;
+//          width: 50vw;
+//          height: 50vw;
+
+//     h1 {
+//         line-height: 1.1;
+//         font-size: 2em;
+//         -webkit-text-stroke: 2px $basic-color;
+
+//     }
+// }
+//  }

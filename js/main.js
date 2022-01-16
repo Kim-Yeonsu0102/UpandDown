@@ -32,7 +32,7 @@ function play() {
 
   if (userValue > 100 || userValue <= 0) {
     resultArea.textContent = "1과 100사이의 숫자를 입력해 주세요 ";
-    return play;
+    return
   }
 
   chances--;
