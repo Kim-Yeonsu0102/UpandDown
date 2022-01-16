@@ -1,0 +1,30 @@
+// Break Point
+$tablet: 0px;
+$laptop: 1020px;
+$desktop: 1021px;
+// Mixins
+@mixin tablet {
+    @media (min-width: #{$tablet}) and (max-width: #{$laptop}) {
+        @content;
+    }
+}
+
+// @mixin laptop {
+//     @media (min-width: #{$laptop}) {
+//         @content;
+//     }
+// }
+@mixin desktop {
+    @media (min-width: #{$laptop+1}) and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+
+/*넓이, 높이 자동 계산함수*/
+
+@mixin square($size) {
+    $calculated: 32px * $size;
+    width: $calculated;
+    height: $calculated;
+}
