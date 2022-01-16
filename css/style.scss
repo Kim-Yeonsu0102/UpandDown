@@ -48,7 +48,12 @@ section {
         font-family: 'Pretendard-Regular';
     }
     #result {
-        font-size: 2em;
+        @include desktop {
+            font-size: 2em;
+        }
+        @include tablet {
+            font-size: 1.2em;
+        }
     }
     #count {
         font-size: 1.2em;
@@ -68,7 +73,6 @@ section {
             height: 40px;
             border: none;
             border-radius: 4px;
-            ;
             letter-spacing: 2px;
             font-size: 0.6em;
         }
